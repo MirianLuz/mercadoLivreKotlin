@@ -10,12 +10,12 @@ import javax.inject.Singleton
 import javax.transaction.Transactional
 import javax.validation.Valid
 
-@Singleton
+//@Singleton
 @Controller("/usuario")
 class UsuarioController(@Inject private val usuarioRepository: UsuarioRepository) {
 
     @Post
-    @Transactional
+    //@Transactional
     fun cadastra(@Body @Valid request: UsuarioRequest): HttpResponse<Any>{
         if(usuarioRepository.existsByEmail(request.email)){
             return HttpResponse.badRequest("Usuário já cadastrado")

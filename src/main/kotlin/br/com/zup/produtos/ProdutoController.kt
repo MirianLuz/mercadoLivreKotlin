@@ -11,7 +11,10 @@ import javax.transaction.Transactional
 import javax.validation.Valid
 
 @Controller("/produto")
-class ProdutoController(@Inject val produtoRepository: ProdutoRepository, @Inject val categoriaRepository: CategoriaRepository) {
+class ProdutoController(
+    @Inject val produtoRepository: ProdutoRepository,
+    @Inject val categoriaRepository: CategoriaRepository
+) {
 
     @Post
     //@Transactional
